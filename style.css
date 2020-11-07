@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Bad+Script&family=Press+Start+2P&display=swap');
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.line {
+    transition: all 250ms;
+    width     : 100vw;
+    height    : 0.5vh;
+    color     : white;
+    background: white;
+    margin    : 20vh 0;
+}
+
+.lineToLeft {
+    animation: lineToLeft 2s;
+}
+
+.lineToRight {
+    animation: lineToRight 2s;
+
+}
+
+@keyframes lineToLeft {
+    from {
+        transform: translateX(100vw);
+    }
+
+    to {
+        transform: translateX(0vw);
+
+    }
+}
+
+@keyframes lineToRight {
+    from {
+        transform: translateX(-100vw);
+    }
+
+    to {
+        transform: translateX(0vw);
+
+    }
+}
+
+.background_float {
+    position: fixed;
+    width   : 100vw;
+    height  : 100vh;
+
+}
+
+.container__wrapper-menu {
+    display        : flex;
+    flex-direction : column;
+    background     : url(./img/emblem_fox.png) center center no-repeat;
+    /* transform   : scale(1.5); */
+    height         : 100vh;
+    justify-content: center;
+    align-items    : center;
+    background-color: black;
+}
+
+.content_autor {
+    color      : white;
+    font-size  : 5vw;
+    position   : absolute;
+    top        : 8vh;
+    font-family: 'Amatic SC';
+    font-weight: 700;
+}
+
+@media all and (max-width: 600px) {
+    .content_autor{
+        font-size: 12vw;
+    }
+}
+
+.container__top-menu {
+    width          : 100vw;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+
+.top-menu {
+    margin-right: 1vw;
+    font-family : 'Amatic SC';
+    font-size   : 3vw;
+}
+
+@media all and (max-width: 600px) {
+    .top-menu{
+        font-size: 6vw ;
+    }
+}
+.container_resume {
+    background     : url(./img/background_resume.jpeg)center center no-repeat;
+    background-size: cover;
+    height         : 100vh;
+
+
+}
+
+.container_portfolio {}
+
+.container_blog {}
+
+
+.container_contacts {}
