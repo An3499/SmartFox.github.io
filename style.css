@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Bad+Script&family=Press+Start+2P&display=swap');
 
-body {
+*{
     overflow-x: hidden;
-    margin: 0;
+}
+
+body {
+    overflow-x : hidden;
+    margin     : 0;
+    user-select: none;
+
 }
 
 .line {
@@ -15,11 +21,11 @@ body {
 }
 
 .lineToLeft {
-    animation: lineToLeft 2s;
+    animation: lineToLeft 2s infinite;
 }
 
 .lineToRight {
-    animation: lineToRight 2s;
+    animation: lineToRight 2s infinite;
 
 }
 
@@ -29,7 +35,7 @@ body {
     }
 
     to {
-        transform: translateX(0vw);
+        transform: translateX(-100vw);
 
     }
 }
@@ -40,7 +46,7 @@ body {
     }
 
     to {
-        transform: translateX(0vw);
+        transform: translateX(100vw);
 
     }
 }
@@ -53,27 +59,47 @@ body {
 }
 
 .container__wrapper-menu {
-    display        : flex;
-    flex-direction : column;
-    background     : url(./img/emblem_fox.png) center center no-repeat;
-    /* transform   : scale(1.5); */
-    height         : 100vh;
-    justify-content: center;
-    align-items    : center;
+    display         : flex;
+    flex-direction  : column;
+    background      : url(./img/emblem_fox.png) center center no-repeat;
+    /* transform    : scale(1.5); */
+    height          : 100vh;
+    justify-content : center;
+    align-items     : center;
     background-color: black;
 }
 
 .content_autor {
+    transition: all 250ms;
     color      : white;
     font-size  : 5vw;
     position   : absolute;
     top        : 8vh;
     font-family: 'Amatic SC';
     font-weight: 700;
+    animation: pulse 4s linear infinite;
+}
+
+.content_autor:hover{
+
+}
+
+@keyframes pulse{
+    25%{
+        transform: scale(0.9);
+        }
+        50%{
+            transform: scale(1);
+
+        }
+        75%{
+            transform: scale(1.1);
+        }
+       
 }
 
 @media all and (max-width: 600px) {
-    .content_autor{
+    .content_autor {
         font-size: 12vw;
     }
 }
@@ -87,27 +113,90 @@ body {
 
 
 .top-menu {
-    margin-right: 1vw;
-    font-family : 'Amatic SC';
-    font-size   : 3vw;
+    transition      : all 250ms;
+    margin-right    : 1vw;
+    font-family     : 'Amatic SC';
+    font-size       : 3vw;
+    background-color: whitesmoke;
+    padding         : 0 0.5vw;
+    border-radius   : 5px;
+}
+
+
+
+.top-menu:active {
+    background-color: yellowgreen !important;
+
+}
+
+.top-menu:nth-of-type(3) {
+    background-color: red;
+
+}
+
+.top-menu:nth-of-type(3):hover{
+    transform: translateY(-7vh);
+
+}
+
+.top-menu:hover {
+    background-color: yellow;
+transform: scale(0.9);
 }
 
 @media all and (max-width: 600px) {
-    .top-menu{
-        font-size: 6vw ;
+    .top-menu {
+        font-size: 8vw;
     }
 }
-.container_resume {
-    background     : url(./img/background_resume.jpeg)center center no-repeat;
+
+.container__resume {
+    background     : url(./img/bg-resume.png)center center no-repeat;
     background-size: cover;
     height         : 100vh;
-
-
 }
 
-.container_portfolio {}
 
-.container_blog {}
+.container__portfolio {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: white  ;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    
+}
+@media all and (max-width:600px){
+    .container__portfolio{
+        height: 40vh;
+    }
+}
+
+.portfolio__slide {
+    transition: all 500ms;
+    display: flex;
+    opacity: 0;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    font-size:3vw ;
+    background-color:black;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+    position: absolute;
+}
+
+@media all and (max-width:600px){
+    .portfolio__slide{
+        margin-top: 10vh;
+        
+    }
+}
 
 
-.container_contacts {}
+.container__blog {}
+
+
+.container__contacts {}
